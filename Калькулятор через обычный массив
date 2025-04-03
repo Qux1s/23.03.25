@@ -78,19 +78,19 @@ void printResult(double userFirst, double userSecond, char userOperation)
 {
     char validOperators[] = {'+', '-', '*', '/'};
 
-    if (userOperation == validOperators[0])  // Compare with '+'
+    if (userOperation == validOperators[0])  
     {
         std::cout << userFirst << " + " << userSecond << " = " << userFirst + userSecond << '\n';
     }
-    else if (userOperation == validOperators[1])  // Compare with '-'
+    else if (userOperation == validOperators[1]) 
     {
         std::cout << userFirst << " - " << userSecond << " = " << userFirst - userSecond << '\n';
     }
-    else if (userOperation == validOperators[2])  // Compare with '*'
+    else if (userOperation == validOperators[2]) 
     {
         std::cout << userFirst << " * " << userSecond << " = " << userFirst * userSecond << '\n';
     }
-    else if (userOperation == validOperators[3])  // Compare with '/'
+    else if (userOperation == validOperators[3])  
     {
         if (userSecond == 0)
         {
