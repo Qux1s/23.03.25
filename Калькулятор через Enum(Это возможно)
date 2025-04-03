@@ -106,7 +106,6 @@ char userPrintOperation()
 }
 
 void printResult(double userFirst, double userSecond, Operator userOperator)
-
 {
 	switch (userOperator)
 	{
@@ -120,10 +119,14 @@ void printResult(double userFirst, double userSecond, Operator userOperator)
 		std::cout << userFirst << " * " << userSecond << " is " << userFirst * userSecond << '\n';
 		break;
 	case Operator::DIVIDE:
-		std::cout << userFirst << " / " << userSecond << " is " << userFirst / userSecond << '\n';
+		if (userSecond == 0)
+			std::cerr << "Error: Division by zero is not allowed.\n";
+		else
+			std::cout << userFirst << " / " << userSecond << " is " << userFirst / userSecond << '\n';
 		break;
-	default:
-		std::cerr << "Something went wrong: printResult() got an invalid operator.\n";
+	case Operator::INVALID:
+		std::cerr << "Error: Invalid operator received in printResult().\n";
+		break;
 	}
 }
 
