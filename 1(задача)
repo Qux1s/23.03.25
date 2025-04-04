@@ -1,0 +1,100 @@
+#include <iostream>
+#include <limits>
+
+enum idxRequest {firstVal, sndVal};
+
+void printResult();
+int userPrintInteger();
+void ignoreLine();
+
+int main()
+{
+printResult();
+}
+
+int userPrintInteger()
+{
+
+    while (true)
+    {
+
+        int userInteger{};
+
+        std::cin >> userInteger;
+
+
+        if (std::cin.fail())
+        {
+            std::cin.clear();
+
+            ignoreLine();
+
+            std::cout << "Oops, that input is invalid.  Please try again.\n";
+        }
+
+        ignoreLine();
+
+        return userInteger;
+
+
+//        if (!std::cin.fail())
+//        {
+//            ignoreLine();
+
+//            return userInteger;
+//        }
+//        else
+//        {
+//            std::cin.clear();
+
+//            ignoreLine();
+
+//            std::cout << "Oops, that input is invalid.  Please try again.\n";
+//        }
+    } //Уничтожается   int userInteger{};
+}
+
+void printResult()
+{
+
+//std::cout << "Enter a smaller integer: ";
+
+int smallerIntenger {userPrintInteger(), };
+
+//std::cout << "Enter a larger integer: ";
+
+int largerIntenger {userPrintInteger()};
+
+if(smallerIntenger > largerIntenger)
+    {
+    int temp{smallerIntenger};
+
+    //temp = ;
+
+    smallerIntenger = largerIntenger;
+
+    largerIntenger = temp;
+
+//    std::cout << "The smaller value is " << smallerIntenger << '\n';
+
+//    std::cout << "The larger value is " << largerIntenger << '\n';
+
+    } //Уничтожается   int temp{};
+    else
+    {
+//    std::cout << "The smaller value is " << smallerIntenger << '\n';
+
+//    std::cout << "The larger value is " << largerIntenger << '\n';
+    }
+
+    std::cout << "The smaller value is " << smallerIntenger << '\n';
+    
+    std::cout << "The larger value is " << largerIntenger << '\n';
+
+
+} //Уничтожается   int smallerIntenger {userPrintInteger()} и int largerIntenger {userPrintInteger()}
+
+void ignoreLine()
+{
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
